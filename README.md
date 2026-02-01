@@ -1,83 +1,97 @@
-Pharma Sales & Market Performance Analytics (SQL-Only)
-Project Overview
+💊 Pharma Sales & Market Performance Analytics (SQL-Only)
 
-This project analyzes 6 years of pharmaceutical sales data across 8 ATC therapy categories using SQL only. The goal is to generate actionable insights for commercial planning, inventory optimization, and market performance evaluation.
+📌 Project Overview
 
-Business Problem
+This project analyzes 6 years of pharmaceutical sales data across 8 ATC therapy categories using SQL only.
+The goal is to generate actionable insights for:
 
-Pharmaceutical companies need to track sales trends, therapy-area performance, seasonal demand, and peak sales periods to make informed decisions. This project addresses:
+Commercial planning
 
-Which therapy areas contribute most to revenue
+Inventory optimization
 
-Year-over-Year and Month-over-Month growth
+Market performance evaluation
 
-Seasonal and weekly demand patterns
+🎯 Business Problem
 
-Peak sales hours and weekday vs weekend trends
+Pharmaceutical companies need to track:
 
-Dataset Description
+Therapy-area performance
 
-Data spans 2014-2019, collected from a single pharmacy’s Point-of-Sale system, and includes:
+Seasonal & weekly trends
 
-sales_hourly.csv – Hourly sales data
+Peak sales hours
 
-sales_daily.csv – Daily sales data
+Year-over-Year growth
 
-sales_weekly.csv – Weekly sales data
+These insights help optimize stock, improve revenue, and support strategic decisions.
 
-sales_monthly.csv – Monthly sales data
+🗂 Dataset Description
 
-Columns include ATC drug categories, sales volume, date, and time attributes (Year, Month, Hour, Weekday Name).
+Data spans 2014–2019, collected from a single pharmacy’s Point-of-Sale system, and includes:
 
-Key SQL Analyses
-1. Peak Month
+File	Description
+sales_hourly.csv	Hourly sales data
+sales_daily.csv	Daily sales data
+sales_weekly.csv	Weekly sales data
+sales_monthly.csv	Monthly sales data
 
-Identified months with higher-than-average sales using aggregation and comparison queries.
+Columns include ATC drug categories, sales volume, and time attributes (Year, Month, Hour, Weekday Name).
 
-2. Drug Ranking per Month
+🔍 Key SQL Analyses
 
-Ranked individual drugs (e.g., N02BE) by monthly sales using window functions (RANK() OVER).
+1️⃣ Peak Month
 
-3. Month-over-Month (MoM) Growth
+Identify months with higher-than-average sales using aggregation and comparison queries.
+SQL Concepts: AVG(), GROUP BY, HAVING
 
-Calculated MoM growth per month to track sales trends using LAG() window function.
+2️⃣ Drug Ranking per Month
 
-4. Peak Sales Hours
+Rank individual drugs (e.g., N02BE) by monthly sales using window functions.
+SQL Concepts: RANK() OVER (PARTITION BY … ORDER BY …)
 
-Aggregated hourly sales to identify peak demand times for pharmacies.
+3️⃣ Month-over-Month (MoM) Growth
 
-5. Weekday vs Weekend Analysis
+Track month-to-month sales changes using LAG().
+SQL Concepts: LAG() OVER, arithmetic calculations
 
-Compared sales performance between weekdays and weekends using CASE statements.
+4️⃣ Peak Sales Hours ⏰
 
-SQL Concepts Used
+Aggregate hourly sales to detect peak demand times.
+
+5️⃣ Weekday vs Weekend Analysis 🌞🌜
+
+Compare sales performance between weekdays and weekends using CASE statements.
+
+💻 SQL Concepts Used
 
 CTEs (Common Table Expressions)
 
-Window Functions (LAG(), RANK(), ROW_NUMBER())
+Window Functions: LAG(), RANK(), ROW_NUMBER()
 
-Aggregations (SUM(), AVG())
+Aggregations: SUM(), AVG()
 
-Conditional logic (CASE WHEN)
+Conditional Logic: CASE WHEN
 
-Grouping & ordering
+Grouping & Ordering
 
-Time-series analysis
+Time-Series Analysis
 
-Business Insights
+This demonstrates senior-level SQL skills for pharma/healthcare analytics.
 
-Identified high-performing therapy categories (e.g., anti-inflammatory drugs).
+📈 Business Insights
 
-Highlighted peak sales months for inventory planning.
+High-performing therapy areas identified (e.g., anti-inflammatory drugs)
 
-Detected hourly and weekly sales patterns, helping optimize staffing and stock levels.
+Peak sales months detected for better inventory planning
 
-Tracked YoY and MoM growth trends for strategic commercial planning.
+Hourly & weekly patterns help optimize staffing & stock
 
-Assumptions & Limitations
+YoY and MoM growth trends guide commercial strategy
 
-Data comes from a single pharmacy; results are indicative, not national-level.
+⚠️ Assumptions & Limitations
 
-Only sales volume is available, no revenue or cost data.
+Data is from one pharmacy – may not reflect national trends
 
-Seasonal trends are approximated based on available historical data.
+Only sales volume available; no revenue/cost info
+
+Seasonal trends approximated from historical data
